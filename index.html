@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tili Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <!-- Placeholder for logo if not exists, or user provided logo.png -->
+                    <i class="fas fa-mountain app-logo" style="font-size: 30px; color: var(--color-secondary);"></i>
+                    <h1>Tili Chat</h1>
+                </div>
+                <button class="close-sidebar-btn" id="closeSidebarBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>Canales</h3>
+                    <ul>
+                        <li><a href="#" class="channel-link active"><i class="fas fa-hashtag"></i> plaza-principal</a>
+                        </li>
+                        <li><a href="#" class="channel-link"><i class="fas fa-hashtag"></i> ventas-garage</a></li>
+                        <li><a href="#" class="channel-link"><i class="fas fa-hashtag"></i> deportes</a></li>
+                        <li><a href="#" class="channel-link"><i class="fas fa-hashtag"></i> memes</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Comunidad</h3>
+                    <ul>
+                        <li><a href="#" class="channel-link"><i class="fas fa-users"></i> Vecinos</a></li>
+                        <li><a href="#" class="channel-link"><i class="fas fa-calendar-alt"></i> Eventos</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-status">
+                    <div class="status-indicator online"></div>
+                    <span>Conectado</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="channel-info">
+                    <i class="fas fa-hashtag text-accent"></i>
+                    <h2>plaza-principal</h2>
+                    <span class="channel-desc">Chat general de Tilisarao</span>
+                </div>
+                <div class="top-actions">
+                    <a href="https://github.com" target="_blank" class="btn-glass btn-sm">
+                        <i class="fab fa-github"></i> Login / Registro
+                    </a>
+                </div>
+            </header>
+
+            <!-- Chat Area -->
+            <div class="chat-area">
+                <!-- Welcome Banner -->
+                <div class="welcome-banner">
+                    <div class="banner-icon">
+                        <i class="fas fa-mountain" style="font-size: 60px; color: var(--color-secondary);"></i>
+                    </div>
+                    <div class="banner-text">
+                        <h3>¡Bienvenido a Tili Chat!</h3>
+                        <p>Estás en el comienzo del canal <strong>#plaza-principal</strong>. Este es el lugar para
+                            charlar con todos los vecinos.</p>
+                        <p class="text-sm text-muted">Recuerda que necesitas una cuenta de GitHub para participar.</p>
+                    </div>
+                </div>
+
+                <!-- Giscus Container -->
+                <div class="giscus-container glass-panel">
+                    <script src="https://giscus.app/client.js" data-repo="[TU_USUARIO]/[TU_REPO]"
+                        data-repo-id="[TU_REPO_ID]" data-category="General" data-category-id="[TU_CATEGORY_ID]"
+                        data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0"
+                        data-input-position="top" data-theme="dark_dimmed" data-lang="es" crossorigin="anonymous" async>
+                        </script>
+                    <div class="giscus-placeholder">
+                        <div class="placeholder-content">
+                            <i class="fas fa-comments"></i>
+                            <p>Cargando conversación...</p>
+                            <span class="text-xs">Configura tu script de Giscus en index.html</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Mobile Overlay -->
+        <div class="overlay" id="overlay"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
