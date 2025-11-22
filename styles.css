@@ -252,6 +252,49 @@ body {
     box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
 }
 
+.app-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+    border: none;
+    color: #000;
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0, 210, 255, 0.15);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
+}
+
+.copy-feedback {
+    margin-left: 10px;
+    color: var(--color-text-muted);
+    opacity: 0;
+    transition: opacity .2s ease;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.copy-feedback.visible {
+    opacity: 1;
+    color: var(--color-accent);
+}
+
 /* Chat Area */
 .chat-area {
     flex: 1;
