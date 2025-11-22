@@ -289,6 +289,170 @@ body {
     margin: 0 auto 0.5rem;
 }
 
+/* Tutorial Section */
+.tutorial-section {
+    margin-bottom: 2rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.glass-panel {
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(10px);
+}
+
+.tutorial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.tutorial-header:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tutorial-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tutorial-title i {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 8px var(--color-accent));
+}
+
+.tutorial-title h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+.tutorial-toggle {
+    color: var(--color-secondary);
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.tutorial-toggle.rotated {
+    transform: rotate(180deg);
+}
+
+.tutorial-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 1rem;
+}
+
+.tutorial-content.expanded {
+    max-height: 2000px;
+    padding: 2rem 1rem 1rem;
+}
+
+.tutorial-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tutorial-step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border-left: 3px solid var(--color-secondary);
+    transition: all 0.3s ease;
+}
+
+.tutorial-step:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateX(5px);
+    box-shadow: 0 4px 20px rgba(0, 210, 255, 0.1);
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+    box-shadow: 0 4px 15px rgba(123, 44, 191, 0.4);
+}
+
+.step-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-secondary);
+}
+
+.step-content p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.step-content ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.step-content li {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 0.3rem;
+}
+
+.step-content strong {
+    color: var(--color-text-main);
+    font-weight: 600;
+}
+
+.text-sm {
+    font-size: 0.85rem;
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+.tutorial-footer {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(90deg, rgba(123, 44, 191, 0.1), rgba(0, 210, 255, 0.1));
+    border-radius: 12px;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tutorial-footer i {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+}
+
+.tutorial-footer p {
+    color: var(--color-text-main);
+    margin: 0;
+    line-height: 1.6;
+}
+
 /* Giscus Container */
 .giscus-container {
     background: var(--glass-bg);
