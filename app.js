@@ -40,3 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Toggle Tutorial Section
+function toggleTutorial() {
+    const content = document.getElementById('tutorialContent');
+    const toggle = document.getElementById('tutorialToggle');
+    
+    content.classList.toggle('expanded');
+    toggle.classList.toggle('rotated');
+}
