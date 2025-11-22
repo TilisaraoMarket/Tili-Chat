@@ -49,3 +49,43 @@ function toggleTutorial() {
     content.classList.toggle('expanded');
     toggle.classList.toggle('rotated');
 }
+
+// Mediafire link used by buttons
+const MEDIAFIRE_URL = 'https://www.mediafire.com/file/s6il7reek6opcoy/Tili_Chat.apk/file';
+
+function copyLink() {
+    const feedbackEl = document.getElementById('copyFeedback');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(MEDIAFIRE_URL).then(() => {
+            showCopyFeedback('Enlace copiado al portapapeles');
+        }).catch(() => {
+            showCopyFeedback('No se pudo copiar');
+        });
+    } else {
+        // Fallback for older browsers
+        const textarea = document.createElement('textarea');
+        textarea.value = MEDIAFIRE_URL;
+        textarea.style.position = 'fixed';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            showCopyFeedback('Enlace copiado al portapapeles');
+        } catch (e) {
+            showCopyFeedback('No se pudo copiar');
+        }
+        document.body.removeChild(textarea);
+    }
+}
+
+function showCopyFeedback(message) {
+    const el = document.getElementById('copyFeedback');
+    if (!el) return;
+    el.textContent = message;
+    el.classList.add('visible');
+    setTimeout(() => {
+        el.classList.remove('visible');
+        el.textContent = '';
+    }, 2500);
+}
