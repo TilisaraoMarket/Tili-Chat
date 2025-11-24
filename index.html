@@ -89,7 +89,9 @@
                             charlar con todos los vecinos.</p>
                         <p class="text-sm text-muted">Recuerda que necesitas una cuenta de GitHub para participar.</p>
                         <div class="app-actions">
-                            <a id="downloadBtn" class="btn-primary" href="https://www.mediafire.com/file/s6il7reek6opcoy/Tili_Chat.apk/file" target="_blank" rel="noopener">
+                            <a id="downloadBtn" class="btn-primary"
+                                href="https://www.mediafire.com/file/s6il7reek6opcoy/Tili_Chat.apk/file" target="_blank"
+                                rel="noopener">
                                 <i class="fas fa-download"></i> Descargar APK
                             </a>
                             <button id="copyLinkBtn" class="btn-glass" onclick="copyLink()">
@@ -110,6 +112,7 @@
                         <i class="fas fa-chevron-down tutorial-toggle" id="tutorialToggle"></i>
                     </div>
                     <div class="tutorial-content" id="tutorialContent">
+
                         <div class="tutorial-steps">
                             <div class="tutorial-step">
                                 <div class="step-number">1</div>
@@ -144,7 +147,8 @@
                                     <h4>Sube tu foto de perfil</h4>
                                     <p>Haz clic en tu avatar actual y selecciona <strong>"Upload a photo..."</strong>
                                         para subir una imagen desde tu dispositivo. Luego haz clic en
-                                        <strong>"Save"</strong>.</p>
+                                        <strong>"Save"</strong>.
+                                    </p>
                                 </div>
                             </div>
 
@@ -201,6 +205,66 @@
                     </div>
                 </div>
 
+                <!-- Tutorial de Imágenes -->
+                <div class="tutorial-section glass-panel">
+                    <div class="tutorial-header" onclick="toggleImageTutorial()">
+                        <div class="tutorial-title">
+                            <i class="fas fa-image"></i>
+                            <h3>¿Quieres publicar imágenes en los comentarios?</h3>
+                        </div>
+                        <i class="fas fa-chevron-down tutorial-toggle" id="imageTutorialToggle"></i>
+                    </div>
+                    <div class="tutorial-content" id="imageTutorialContent">
+
+                        <div class="tutorial-steps">
+                            <div class="tutorial-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Crear un Repositorio en GitHub</h4>
+                                    <p>Primero, necesitas crear un repositorio en GitHub donde subirás tus imágenes. Si ya tienes uno, puedes usarlo.</p>
+                                    <p>Luego, en el <strong>menú hamburguesa</strong> (las tres líneas horizontales), selecciona la opción <strong>"Issues"</strong>.</p>
+                                    <img src="1.png" alt="Paso 1: Crear repositorio y seleccionar Issues" class="screenshot" onclick="openModal(this.src)">
+                                </div>
+                            </div>
+
+                            <div class="tutorial-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Cargar tu Imagen</h4>
+                                    <p>Una vez dentro de "Issues", haz clic en <strong>"New issue"</strong> y arrastra tu imagen al cuadro de texto.</p>
+                                    <p>GitHub subirá automáticamente la imagen y generará un código especial.</p>
+                                    <img src="2.png" alt="Paso 2: Cargar imagen en el issue" class="screenshot" onclick="openModal(this.src)">
+                                </div>
+                            </div>
+
+                            <div class="tutorial-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Copiar el Código</h4>
+                                    <p>Dale al botón <strong>"Create issue"</strong> o simplemente copia el código que aparece cuando arrastras la imagen.</p>
+                                    <div class="code-block">
+                                        <code>&lt;img width="1344" height="768" alt="Image" src="https://github.com/user-attachments/assets/9a83b94b-334b-4431-ac3c-ae60d78e204d" /&gt;</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tutorial-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Pegar en los Comentarios</h4>
+                                    <p>Ahora ve a la <strong>caja de comentarios de la Web</strong> donde quieres publicar la imagen y <strong>pega el código</strong> que copiaste.</p>
+                                </div>
+                            </div>
+
+                            <div class="alert">
+                                <i class="fas fa-lightbulb"></i>
+                                <strong>💡 Consejo:</strong>
+                                <p>Puedes cancelar el issue después de copiar el código; la imagen seguirá disponible en GitHub.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Giscus Container -->
                 <div class="giscus-container glass-panel">
                     <script src="https://giscus.app/client.js" data-repo="tilisaraomarket/Tili-Chat"
@@ -208,13 +272,37 @@
                         data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0"
                         data-input-position="bottom" data-theme="dark_dimmed" data-lang="es" crossorigin="anonymous"
                         async>
-                        </script>
+                    </script>
+                </div>
+
+                <!-- Contador de visitas -->
+                <div class="contador-visitas">
+                    <div id="sfcfwldss2f13z279uazfd34xtd957sk6ys"></div>
+                    <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=fwldss2f13z279uazfd34xtd957sk6ys&down=async" async></script>
+                    <noscript>
+                        <a href="https://www.contadorvisitasgratis.com" title="contador de visitas">
+                            <img src="https://counter1.optistats.ovh/private/contadorvisitasgratis.php?c=fwldss2f13z279uazfd34xtd957sk6ys" border="0" title="contador de visitas" alt="contador de visitas">
+                        </a>
+                    </noscript>
                 </div>
             </div>
         </main>
 
         <!-- Mobile Overlay -->
         <div class="overlay" id="overlay"></div>
+    </div>
+
+    <!-- Modal para ver imágenes en grande -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal" onclick="closeModal(event)">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Imagen ampliada">
+    </div>
+
+    <!-- Contador de visitas al final del cuerpo -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://www.contadorvisitasgratis.com" title="contador de visitas">
+            <img src="https://counter1.optistats.ovh/private/contadorvisitasgratis.php?c=fwldss2f13z279uazfd34xtd957sk6ys" border="0" title="contador de visitas" alt="contador de visitas">
+        </a>
     </div>
 
     <script src="app.js"></script>
