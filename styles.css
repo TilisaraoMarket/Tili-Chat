@@ -281,11 +281,6 @@ body {
         display: block;
     }
 
-    .main-content {
-        padding-bottom: 60px;
-        /* Space for mobile navigation */
-    }
-
     .top-bar {
         padding: 0 1rem;
     }
@@ -691,19 +686,18 @@ body {
     }
 
     .top-actions .btn-glass {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.5rem;
-        gap: 4px;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.6rem;
+        gap: 5px;
         white-space: nowrap;
     }
 
     .top-actions .btn-glass i {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
-    /* Ajustar tamaño de fuente del botón en pantallas muy pequeñas */
     .top-bar {
-        padding: 0 0.5rem;
+        padding: 0 0.75rem;
         height: 60px;
     }
 
@@ -715,6 +709,20 @@ body {
         padding: 0.75rem;
     }
 }
+
+@media (max-width: 390px) {
+    .login-text::before {
+        content: 'Registro';
+        font-size: 0.8rem;
+    }
+    .login-text {
+        font-size: 0;
+    }
+    .top-actions .btn-glass {
+        gap: 6px;
+    }
+}
+
 
 /* Extra small screens - Ensure full visibility */
 @media (max-width: 360px) {
