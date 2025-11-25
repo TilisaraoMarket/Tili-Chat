@@ -759,3 +759,33 @@ body {
         font-size: 0.9rem;
     }
 }
+
+/* Ajustes extra para asegurar que no haya desbordes horizontales en móvil/APK */
+html,
+body {
+    max-width: 100%;
+}
+
+.app-layout,
+.main-content,
+.top-bar,
+.chat-area {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 420px) {
+    .top-bar {
+        padding: 0 0.3rem;
+    }
+
+    .top-actions .btn-glass {
+        padding: 0.35rem 0.55rem;
+        font-size: 0.75rem;
+    }
+}
