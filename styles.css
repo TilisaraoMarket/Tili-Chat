@@ -75,11 +75,15 @@ body {
 }
 
 .sidebar-header {
-    padding: 1.5rem;
+    padding: 1.2rem 1rem;
     border-bottom: var(--glass-border);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    background: rgba(15, 12, 41, 0.95);
+    z-index: 10;
 }
 
 .logo-container {
@@ -117,8 +121,9 @@ body {
 
 .sidebar-nav {
     flex: 1;
-    padding: 1.5rem;
+    padding: 1.2rem 1rem;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .nav-section {
@@ -142,12 +147,15 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 0.8rem;
     color: var(--color-text-muted);
     text-decoration: none;
     border-radius: 12px;
     transition: all 0.2s ease;
     margin-bottom: 0.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .channel-link:hover {
@@ -261,8 +269,12 @@ body {
         top: 0;
         left: 0;
         bottom: 0;
+        width: 85%;
+        max-width: 300px;
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
     
     .sidebar.active {
