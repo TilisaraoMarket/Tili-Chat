@@ -28,33 +28,20 @@
     box-sizing: border-box;
 }
 
-html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-}
-
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
     font-family: var(--font-main);
     background: var(--color-bg-gradient);
     background-attachment: fixed;
     color: var(--color-text-main);
-    -webkit-overflow-scrolling: touch;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* Layout */
 .app-layout {
     display: flex;
-    min-height: 100vh;
-    width: 100%;
-    max-width: 100%;
+    height: 100vh;
+    width: 100vw;
     position: relative;
 }
 
@@ -71,15 +58,11 @@ body {
 }
 
 .sidebar-header {
-    padding: 1.2rem 1rem;
+    padding: 1.5rem;
     border-bottom: var(--glass-border);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    background: rgba(15, 12, 41, 0.95);
-    z-index: 10;
 }
 
 .logo-container {
@@ -117,9 +100,8 @@ body {
 
 .sidebar-nav {
     flex: 1;
-    padding: 1.2rem 1rem;
+    padding: 1.5rem;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 .nav-section {
@@ -143,15 +125,12 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 0.8rem 0.8rem;
+    padding: 0.8rem 1rem;
     color: var(--color-text-muted);
     text-decoration: none;
     border-radius: 12px;
     transition: all 0.2s ease;
     margin-bottom: 0.2rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .channel-link:hover {
@@ -215,14 +194,13 @@ body {
 }
 
 .mobile-menu-btn {
-    display: block;
+    display: none;
     background: none;
     border: none;
     color: var(--color-text-main);
     font-size: 1.5rem;
     cursor: pointer;
     margin-right: 1rem;
-    z-index: 1000;
 }
 
 .channel-info {
@@ -243,46 +221,10 @@ body {
 }
 
 @media (min-width: 768px) {
-    .mobile-menu-btn {
-        display: none;
-    }
-
     .channel-desc {
         display: block;
         border-left: 1px solid var(--color-text-muted);
         padding-left: 1rem;
-    }
-
-    .sidebar {
-        transform: translateX(0) !important;
-    }
-}
-
-/* Mobile styles */
-@media (max-width: 767px) {
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 85%;
-        max-width: 300px;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .sidebar.active {
-        transform: translateX(0);
-    }
-
-    .close-sidebar-btn {
-        display: block;
-    }
-
-    .top-bar {
-        padding: 0 1rem;
     }
 }
 
@@ -673,119 +615,15 @@ body {
 
     .channel-info {
         gap: 0.5rem;
-        flex: 1;
-        min-width: 0;
     }
 
     .channel-info h2 {
-        font-size: 0.9rem;
-    }
-
-    .top-actions {
-        flex-shrink: 0;
-    }
-
-    .top-actions .btn-glass {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.6rem;
-        gap: 5px;
-        white-space: nowrap;
-    }
-
-    .top-actions .btn-glass i {
         font-size: 1rem;
     }
 
-    .top-bar {
-        padding: 0 0.75rem;
-        height: 60px;
-    }
-
-    .banner-text h3 {
-        font-size: 1.5rem;
-    }
-
-    .chat-area {
-        padding: 0.75rem;
-    }
-}
-
-@media (max-width: 390px) {
-    .login-text::before {
-        content: 'Registro';
-        font-size: 0.8rem;
-    }
-    .login-text {
-        font-size: 0;
-    }
     .top-actions .btn-glass {
-        gap: 6px;
-    }
-}
-
-
-/* Extra small screens - Ensure full visibility */
-@media (max-width: 360px) {
-    .top-bar {
-        padding: 0 0.3rem;
-        height: 55px;
-    }
-
-    .mobile-menu-btn {
-        margin-right: 0.3rem;
-        font-size: 1.3rem;
-    }
-
-    .channel-info h2 {
         font-size: 0.8rem;
-    }
-
-    .top-actions .btn-glass {
-        font-size: 0.65rem;
-        padding: 0.35rem 0.4rem;
-        gap: 3px;
-        border-radius: 15px;
-    }
-
-    .top-actions .btn-glass i {
-        font-size: 0.8rem;
-    }
-
-    .banner-text h3 {
-        font-size: 1.3rem;
-    }
-
-    .banner-text p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Ajustes extra para asegurar que no haya desbordes horizontales en móvil/APK */
-html,
-body {
-    max-width: 100%;
-}
-
-.app-layout,
-.main-content,
-.top-bar,
-.chat-area {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-.top-actions {
-    display: flex;
-    align-items: center;
-}
-
-@media (max-width: 420px) {
-    .top-bar {
-        padding: 0 0.3rem;
-    }
-
-    .top-actions .btn-glass {
-        padding: 0.35rem 0.55rem;
-        font-size: 0.75rem;
+        padding: 0.5rem 0.6rem;
+        gap: 5px;
     }
 }
